@@ -26,11 +26,44 @@
 
 # hercules_health = 100
 
-demigod = {"name": "Hercules","attack": 15,"health": 100}
+demigod = {"name": "Hercules","attack": 15, "heal": 30, "health": 100}
 
 monster_1 = {"name": "Nemean Lion", "attack": 8, "health": 25}
 
 monster_2 = {"name": "Lernaean hydra", "attack": 10, "health": 35}
 
 monster_3 = {"name": "Cerberus", "attack": 12, "health": 45}
+
+battle = True
+
+while battle == True:
+
+    print("Please select your action!")
+    print("1 = attack")
+    print("2 = heal")
+
+    demigod_response = input("Make your choice: ")
+
+    if demigod_response == "1":
+        monster_1["health"] = monster_1["health"] - demigod["attack"]
+        demigod["health"] = demigod["health"] - monster_1["attack"]
+        print("Nemean Lion health is now " ) 
+        print(monster_1["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])
+
+    elif demigod_response == "2":
+        demigod["health"] = demigod["health"] + demigod["heal"]
+        demigod["health"] = demigod["health"] - monster_1["attack"]
+        print("Nemean Lion health is now " ) 
+        print(monster_1["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])        
+
+    else:
+        print("Please choose only 1 or 2.")
+
+
+    if monster_1["health"] <= 0 or demigod["health"] <= 0:
+        battle = False
 
