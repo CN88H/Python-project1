@@ -34,11 +34,18 @@ monster_2 = {"name": "Lernaean hydra", "attack": 10, "health": 35}
 
 monster_3 = {"name": "Cerberus", "attack": 12, "health": 45}
 
-battle = True
+print("Welcome to the greatest story ever told. We have Hercules, the most well known demigod and son of Zeus,") 
+print("whose stories is told by his great battles and deeds.") 
+print("We will look into some of his amazing feat in interactive story telling")
 
-while battle == True:
+print("We'll first look into Hercules battle between Nemean Lion, a majestic creature that no man made weapon can kill.")
+print("It was Hercules, who drove the beast back into it's liar, stunned the beast with his clubs and defeated the beast with his bare hands.")
 
-    print("Please select your action!")
+battle_1 = True
+
+while battle_1 == True:
+
+    print("You've corner the beast! Please select your action!")
     print("1 = attack")
     print("2 = heal")
 
@@ -65,5 +72,76 @@ while battle == True:
 
 
     if monster_1["health"] <= 0 or demigod["health"] <= 0:
-        battle = False
+        battle_1 = False
 
+print("Next, we face the Lernean Hydra, 9 headed water serpeant. It was Hercules duty to slay this monster.")
+print("Let's take a looked into the showdown between the two.")
+
+battle_2 = True
+
+while battle_2 == True:
+
+    print("Please select your action!")
+    print("1 = attack")
+    print("2 = heal")
+
+    demigod_response = input("Make your choice: ")
+
+    if demigod_response == "1":
+        monster_2["health"] = monster_2["health"] - demigod["attack"]
+        demigod["health"] = demigod["health"] - monster_2["attack"]
+        print("Lernaean hydra health is now " ) 
+        print(monster_2["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])
+
+    elif demigod_response == "2":
+        demigod["health"] = demigod["health"] + demigod["heal"]
+        demigod["health"] = demigod["health"] - monster_1["attack"]
+        print("Lernaean hydra health is now " ) 
+        print(monster_2["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])        
+
+    else:
+        print("Please choose only 1 or 2.")
+
+
+    if monster_2["health"] <= 0 or demigod["health"] <= 0:
+        battle_2 = False
+
+
+print("Hercules also have to travel into the underworld who he will face the great gaurdian of the underworld, Cerberus.")
+
+battle_3 = True
+
+while battle_3 == True:
+
+    print("Please select your action!")
+    print("1 = attack")
+    print("2 = heal")
+
+    demigod_response = input("Make your choice: ")
+
+    if demigod_response == "1":
+        monster_3["health"] = monster_3["health"] - demigod["attack"]
+        demigod["health"] = demigod["health"] - monster_3["attack"]
+        print("Cerberus health is now " ) 
+        print(monster_3["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])
+
+    elif demigod_response == "2":
+        demigod["health"] = demigod["health"] + demigod["heal"]
+        demigod["health"] = demigod["health"] - monster_1["attack"]
+        print("Cerberus health is now " ) 
+        print(monster_2["health"]) 
+        print("Hercules health is now " ) 
+        print(demigod["health"])        
+
+    else:
+        print("Please choose only 1 or 2.")
+
+
+    if monster_3["health"] <= 0 or demigod["health"] <= 0:
+        battle_3 = False
